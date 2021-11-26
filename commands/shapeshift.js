@@ -13,11 +13,11 @@ module.exports = {
 			if (user) {
 				interaction.client.user.setUsername(`${user.username}`);
 				interaction.client.user.setAvatar(`${user.displayAvatarURL({ dynamic: true })}`);
-				await interaction.reply(`Hello! I am ${user.username}.`);
+				await interaction.reply({ content: `I have become ${user.username}.`, ephemeral: true});
 			} else {
 				interaction.client.user.setUsername(`${interaction.user.username}`);
 				interaction.client.user.setAvatar(`${interaction.user.displayAvatarURL({ dynamic: true })}`);
-				await interaction.reply(`I am ${interaction.user.username}.`);
+				await interaction.reply({ content: `I am you?`, ephemeral: true});
 			}
 		} else {
 			await interaction.reply({ content: `You don't have the authentication to do this.`, ephemeral: true });
