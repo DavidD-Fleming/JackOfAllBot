@@ -36,7 +36,7 @@ module.exports = {
 		fillItIn(context, canvas.width * 5.3/7, canvas.height * 0.8/7, 17, `${reason}`);
 
 		// send meme
-		const attachment = new MessageAttachment(canvas.toBuffer(), 'profile-image.png');
+		const attachment = new MessageAttachment(canvas.toBuffer(), 'pushupmeme.png');
 		interaction.reply({ files: [attachment] });
 	},
 };

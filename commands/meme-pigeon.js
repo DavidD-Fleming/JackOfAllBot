@@ -8,7 +8,7 @@ module.exports = {
 		.setName('meme-pigeon')
 		.setDescription('Draws the pigeon meme!')
 		.addStringOption(option => option.setName('person').setDescription('The person guessing.').setRequired(true))
-		.addStringOption(option => option.setName('butterfly').setDescription('The thing being guessed').setRequired(true))
+		.addStringOption(option => option.setName('butterfly').setDescription('The thing being guessed.').setRequired(true))
 		.addStringOption(option => option.setName('guess').setDescription('The guess.').setRequired(true)),
 	async execute(interaction) {
 		// collect input
@@ -35,7 +35,7 @@ module.exports = {
 		fillItIn(context, canvas.width - 200, canvas.width / 2, canvas.height, 70, `Is this ${guess}?`);
 
 		// send meme
-		const attachment = new MessageAttachment(canvas.toBuffer(), 'profile-image.png');
+		const attachment = new MessageAttachment(canvas.toBuffer(), 'pigeonmeme.png');
 		interaction.reply({ files: [attachment] });
 	},
 };

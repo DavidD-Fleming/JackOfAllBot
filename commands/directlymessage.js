@@ -5,7 +5,7 @@ const { adminId } = require('./../config.json');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('directlymessage')
-		.setDescription('Directly message a user with a dialogue!')
+		.setDescription('(Admin Only) Directly message a user with a dialogue!')
 		.addUserOption(option => option.setName('target').setDescription('The user to message.').setRequired(true))
 		.addStringOption(option => option.setName('dialogue').setDescription('The message to send.').setRequired(true)),
 	async execute(interaction) {

@@ -37,7 +37,7 @@ module.exports = {
 		}
 
 		// send meme
-		const attachment = new MessageAttachment(canvas.toBuffer(), 'profile-image.png');
+		const attachment = new MessageAttachment(canvas.toBuffer(), 'handshakememe.png');
 		interaction.reply({ files: [attachment] });
 	},
 };
