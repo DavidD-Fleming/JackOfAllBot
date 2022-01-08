@@ -5,7 +5,7 @@ const { adminId } = require('./../config.json');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('shapeshift')
-		.setDescription('(Admin Only) Turns into a selected user, or yourself!')
+		.setDescription('(Admin Only) Turns into a selected user or Jack Bot base form!')
 		.addUserOption(option => option.setName('target').setDescription('The user to turn into.')),
 	async execute(interaction) {
 		const user = interaction.options.getUser('target');
@@ -16,12 +16,12 @@ module.exports = {
 					interaction.client.user.setAvatar(`${user.displayAvatarURL({ dynamic: true })}`);
 					await interaction.reply({ content: `I have become ${user.username}.`, ephemeral: true});
 				} else {
-					interaction.client.user.setUsername(`${interaction.user.username}`);
-					interaction.client.user.setAvatar(`${interaction.user.displayAvatarURL({ dynamic: true })}`);
-					await interaction.reply({ content: `I am you?`, ephemeral: true});
+					interaction.client.user.setUsername('Jack Bot');
+					interaction.client.user.setAvatar('./meme_images/lowpolyraccoon.PNG');
+					await interaction.reply({ content: `I am Jack Bot.`, ephemeral: true});
 				}
 			} catch (DiscordAPIError) {
-				await interaction.reply({ content: `The bot is being changed too much! Please wait an hour.`, ephemeral: true });
+				await interaction.reply({ content: `The bot is being changed too much! Please wait one hour.`, ephemeral: true });
 			}
 		} else {
 			await interaction.reply({ content: `You don't have the authentication to do this.`, ephemeral: true });
