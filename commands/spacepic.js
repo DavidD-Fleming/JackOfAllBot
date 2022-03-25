@@ -13,6 +13,7 @@ module.exports = {
 	async execute(interaction) {
 		await interaction.deferReply();
 		const { copyright, date, explanation, hdurl, title } = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASAKey}`).then(response => response.json());
+        console.log(hdurl);
 
         // embed the result
         const embed = new MessageEmbed()

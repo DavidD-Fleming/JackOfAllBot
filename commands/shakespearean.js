@@ -30,7 +30,7 @@ module.exports = {
             .setColor('#964b00')
             .setTitle('A Discord\'s Tale')
             .setDescription(index)
-            .addField(`${interaction.user.username}:`, contents.translated)
+            .addField(`${interaction.user.username}:`, trim(contents.translated, 1024))
             .setImage(interaction.user.displayAvatarURL({ dynamic: true}))
         interaction.editReply({ embeds: [embed] });
 	},
